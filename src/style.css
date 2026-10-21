@@ -573,7 +573,6 @@ button:focus-visible {
   display: flex;
   align-items: stretch;
   gap: var(--carousel-gap);
-  margin: 40px -24px 0;
   padding: 12px var(--carousel-inline-padding) 24px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
