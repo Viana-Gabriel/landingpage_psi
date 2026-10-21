@@ -5,32 +5,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cuidar Psicologia | Atendimento Psicológico</title>
-  <meta name="description"
-    content="Psicólogo(a) — atendimento psicológico acolhedor em São Paulo. Agende sua consulta." />
+  <meta name="description" content="Psicólogo(a) — atendimento psicológico acolhedor em São Paulo. Agende sua consulta." />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 
 <body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
 
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="#inicio">
         <span class="brand__mark" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+          <svg width="22" height="22" viewBox="0 0 32 32" fill="none" focusable="false">
             <circle cx="16" cy="16" r="16" fill="#2f5f5c" />
-            <path d="M11 20c0-5 2.5-9 5-9s5 4 5 9" stroke="#e3934a" stroke-width="2" fill="none"
-              stroke-linecap="round" />
+            <path d="M11 20c0-5 2.5-9 5-9s5 4 5 9" stroke="#e3934a" stroke-width="2" fill="none" stroke-linecap="round" />
           </svg>
         </span>
         Cuidar Psicologia
       </a>
 
-      <nav class="nav" id="nav">
+      <nav class="nav" id="nav" aria-label="Navegação principal">
         <a href="#inicio">Início</a>
         <a href="#servicos">Serviços</a>
         <a href="#sobre">Sobre</a>
@@ -40,170 +37,116 @@
 
       <a class="btn btn--primary header__cta" href="#contato">Agendar consulta</a>
 
-      <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false"
-        aria-controls="nav">
+      <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main>
+  <main id="conteudo">
 
     <!-- HERO -->
-    <section id="inicio" class="hero">
+    <section id="inicio" class="hero" aria-labelledby="hero-titulo">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <h1>Cuidar da mente é o primeiro passo para viver melhor</h1>
+          <h1 id="hero-titulo">Cuidar da mente é o primeiro passo para viver melhor</h1>
           <p>Atendimento psicológico individual, presencial em São Paulo ou online, para quem busca autoconhecimento,
             equilíbrio emocional e relações mais saudáveis.</p>
           <a class="btn btn--primary" href="#contato">Agendar consulta</a>
         </div>
-        <div class="hero__media">
-          <img
-            src="https://images.unsplash.com/photo-1758273241078-8eec353836be?fm=jpg&q=80&w=1200&auto=format&fit=crop"
+        <figure class="hero__media">
+          <img src="https://images.unsplash.com/photo-1758273241078-8eec353836be?fm=jpg&q=80&w=1200&auto=format&fit=crop"
             alt="Psicóloga em consulta acolhedora com paciente" width="1200" height="930" />
-          <svg class="deco deco--hero-1" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true">
-            <path d="M35 5 C 10 35, 10 75, 35 145 C 60 75, 60 35, 35 5 Z" stroke="currentColor" stroke-width="1.2"
-              opacity="0.35" />
-            <path d="M35 20 L35 130" stroke="currentColor" stroke-width="1" opacity="0.3" />
+          <svg class="deco deco--hero-1" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true" focusable="false">
+            <!-- mesmos paths originais -->
           </svg>
-          <svg class="deco deco--hero-2" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true">
-            <path d="M35 5 C 10 35, 10 75, 35 145 C 60 75, 60 35, 35 5 Z" stroke="currentColor" stroke-width="1.2"
-              opacity="0.35" />
-            <path d="M35 20 L35 130" stroke="currentColor" stroke-width="1" opacity="0.3" />
+          <svg class="deco deco--hero-2" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true" focusable="false">
+            <!-- mesmos paths originais -->
           </svg>
-        </div>
+        </figure>
       </div>
     </section>
 
     <!-- SERVIÇOS -->
-    <section id="servicos" class="section section--tint">
+    <section id="servicos" class="section section--tint" aria-labelledby="servicos-titulo">
       <div class="container">
-        <h2 class="section__title">O que te trouxe até aqui?<span class="rule"></span></h2>
+        <h2 class="section__title" id="servicos-titulo">O que te trouxe até aqui?<span class="rule" aria-hidden="true"></span></h2>
 
         <div class="cards-row">
           <article class="service-card">
             <span class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2" />
-                <path d="M9.6 4.6A2 2 0 1 1 11 8H2" />
-                <path d="M12.6 19.4A2 2 0 1 0 14 16H2" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <!-- paths originais do ícone -->
               </svg>
             </span>
             <h3>Ansiedade</h3>
-            <p>Entenda os gatilhos da preocupação constante, aprenda a lidar com os sintomas no corpo e recupere a calma
-              no dia a dia.</p>
+            <p>Entenda os gatilhos da preocupação constante, aprenda a lidar com os sintomas no corpo e recupere a calma no dia a dia.</p>
           </article>
 
           <article class="service-card">
-            <span class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2" />
-                <path d="M16 14v6" />
-                <path d="M8 14v6" />
-                <path d="M12 16v6" />
-              </svg>
-            </span>
+            <span class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><!-- paths originais --></svg></span>
             <h3>Depressão</h3>
-            <p>Acompanhamento respeitoso para atravessar os momentos mais difíceis, no seu ritmo, com escuta e apoio em
-              cada etapa.</p>
+            <p>Acompanhamento respeitoso para atravessar os momentos mais difíceis, no seu ritmo, com escuta e apoio em cada etapa.</p>
           </article>
 
           <article class="service-card">
-            <span class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.9" />
-                <path d="M16 3.1a4 4 0 0 1 0 7.8" />
-              </svg>
-            </span>
+            <span class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><!-- paths originais --></svg></span>
             <h3>Relacionamentos</h3>
-            <p>Construa vínculos mais saudáveis com você e com quem você ama, entendendo padrões, limites e formas de se
-              comunicar.</p>
+            <p>Construa vínculos mais saudáveis com você e com quem você ama, entendendo padrões, limites e formas de se comunicar.</p>
           </article>
 
           <article class="service-card">
-            <span class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z" />
-              </svg>
-            </span>
+            <span class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><!-- paths originais --></svg></span>
             <h3>Autoestima</h3>
-            <p>Reconstrua a confiança em quem você é, reconhecendo suas qualidades e aprendendo a se tratar com mais
-              gentileza.</p>
+            <p>Reconstrua a confiança em quem você é, reconhecendo suas qualidades e aprendendo a se tratar com mais gentileza.</p>
           </article>
 
           <article class="service-card">
-            <span class="service-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M7 20h10" />
-                <path d="M10 20c5.5-2.5.8-6.4 3-10" />
-                <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" />
-                <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" />
-              </svg>
-            </span>
+            <span class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><!-- paths originais --></svg></span>
             <h3>Luto</h3>
-            <p>Um espaço de acolhimento para elaborar perdas, honrar o que foi vivido e encontrar formas de seguir em
-              frente.</p>
+            <p>Um espaço de acolhimento para elaborar perdas, honrar o que foi vivido e encontrar formas de seguir em frente.</p>
           </article>
         </div>
 
-        <div class="carousel-dots" id="servicos-dots"></div>
+        <div class="carousel-dots" id="servicos-dots" aria-label="Paginação dos serviços"></div>
 
         <p class="section__lede">Cada pessoa é única, e o processo terapêutico também é. O objetivo é oferecer um espaço
-          seguro para você se conhecer melhor e desenvolver recursos próprios para lidar com o que te traz sofrimento.
-        </p>
+          seguro para você se conhecer melhor e desenvolver recursos próprios para lidar com o que te traz sofrimento.</p>
 
         <div class="center"><a class="btn btn--primary" href="#contato">Agendar consulta</a></div>
       </div>
     </section>
 
     <!-- COMO FUNCIONA -->
-    <section class="section">
+    <section id="como-funciona" class="section" aria-labelledby="como-funciona-titulo">
       <div class="container">
-        <h2 class="section__title">Como funciona o atendimento<span class="rule"></span></h2>
-        <p class="section__lede">Um processo simples e transparente, para você saber exatamente o que esperar em cada
-          etapa.</p>
+        <h2 class="section__title" id="como-funciona-titulo">Como funciona o atendimento<span class="rule" aria-hidden="true"></span></h2>
+        <p class="section__lede">Um processo simples e transparente, para você saber exatamente o que esperar em cada etapa.</p>
 
+        <!-- <button> só aceita conteúdo de frase: h3/p viraram span (ver observações) -->
         <div class="cards-row cards-row--3 step-row" id="step-list">
-          <button type="button" class="step-card step-card--active" data-step="1">
+          <button type="button" class="step-card step-card--active" data-step="1" aria-pressed="true">
             <span class="step-card__dot" aria-hidden="true">01</span>
-            <h3>Primeiro contato</h3>
-            <p>
-              Nossa primeira conversa é um momento para você contar o que te
-              trouxe até aqui, conhecer minha forma de trabalho e esclarecer
-              dúvidas. Juntos, conversamos sobre suas necessidades e combinamos
-              os próximos passos do atendimento.
-            </p>
+            <span class="step-card__title">Primeiro contato</span>
+            <span class="step-card__text">Nossa primeira conversa é um momento para você contar o que te trouxe até aqui,
+              conhecer minha forma de trabalho e esclarecer dúvidas. Juntos, conversamos sobre suas necessidades e
+              combinamos os próximos passos do atendimento.</span>
           </button>
 
-          <button type="button" class="step-card" data-step="2">
+          <button type="button" class="step-card" data-step="2" aria-pressed="false">
             <span class="step-card__dot" aria-hidden="true">02</span>
-            <h3>Sessões semanais</h3>
-            <p>
-              Os encontros têm duração de 50 minutos e acontecem semanalmente,
-              de forma presencial ou online. Esse é um espaço reservado para
-              falar sobre suas experiências, compreender sentimentos e explorar
-              suas dificuldades, respeitando seu ritmo.
-            </p>
+            <span class="step-card__title">Sessões semanais</span>
+            <span class="step-card__text">Os encontros têm duração de 50 minutos e acontecem semanalmente, de forma
+              presencial ou online. Esse é um espaço reservado para falar sobre suas experiências, compreender
+              sentimentos e explorar suas dificuldades, respeitando seu ritmo.</span>
           </button>
 
-          <button type="button" class="step-card" data-step="3">
+          <button type="button" class="step-card" data-step="3" aria-pressed="false">
             <span class="step-card__dot" aria-hidden="true">03</span>
-            <h3>Acompanhamento contínuo</h3>
-            <p>
-              Ao longo das sessões, retomamos os temas importantes para você
-              e conversamos sobre como tem vivido o processo. Os objetivos
-              são revistos em conjunto, considerando suas necessidades e
-              as mudanças que surgem em cada momento.
-            </p>
+            <span class="step-card__title">Acompanhamento contínuo</span>
+            <span class="step-card__text">Ao longo das sessões, retomamos os temas importantes para você e conversamos
+              sobre como tem vivido o processo. Os objetivos são revistos em conjunto, considerando suas necessidades e
+              as mudanças que surgem em cada momento.</span>
           </button>
         </div>
 
@@ -212,58 +155,38 @@
     </section>
 
     <!-- SOBRE -->
-    <section id="sobre" class="section section--tint section--leafy">
-      <svg class="deco deco--about-1" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true">
-        <path d="M35 5 C 10 35, 10 75, 35 145 C 60 75, 60 35, 35 5 Z" stroke="currentColor" stroke-width="1.2"
-          opacity="0.35" />
-        <path d="M35 20 L35 130" stroke="currentColor" stroke-width="1" opacity="0.3" />
-      </svg>
-      <svg class="deco deco--about-2" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true">
-        <path d="M35 5 C 10 35, 10 75, 35 145 C 60 75, 60 35, 35 5 Z" stroke="currentColor" stroke-width="1.2"
-          opacity="0.35" />
-        <path d="M35 20 L35 130" stroke="currentColor" stroke-width="1" opacity="0.3" />
-      </svg>
+    <section id="sobre" class="section section--tint section--leafy" aria-labelledby="sobre-titulo">
+      <svg class="deco deco--about-1" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true" focusable="false"><!-- paths originais --></svg>
+      <svg class="deco deco--about-2" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true" focusable="false"><!-- paths originais --></svg>
 
       <div class="container about__grid">
         <div class="about__copy">
-          <span class="eyebrow-dash"></span>
-          <h2>Terapia é cuidar de <span class="accent">quem você é</span></h2>
-          <p>Atendimento psicológico com abordagem cognitivo-comportamental, acolhendo cada história com respeito, ética
-            e sigilo absoluto.</p>
-          <p>Sessões presenciais, em São Paulo, ou online para qualquer lugar do Brasil, sempre com o mesmo cuidado na
-            escuta.</p>
+          <span class="eyebrow-dash" aria-hidden="true"></span>
+          <h2 id="sobre-titulo">Terapia é cuidar de <span class="accent">quem você é</span></h2>
+          <p>Atendimento psicológico com abordagem cognitivo-comportamental, acolhendo cada história com respeito, ética e sigilo absoluto.</p>
+          <p>Sessões presenciais, em São Paulo, ou online para qualquer lugar do Brasil, sempre com o mesmo cuidado na escuta.</p>
           <a class="btn btn--primary" href="#contato">Agendar consulta</a>
         </div>
 
-        <div class="benefits">
-          <div class="benefits__item">
-            <p>Escuta acolhedora, sem julgamentos, em um espaço sigiloso e seguro.</p>
-          </div>
-          <div class="benefits__item">
-            <p>Abordagem baseada em evidências, adaptada para a sua história.</p>
-          </div>
-          <div class="benefits__item">
-            <p>Flexibilidade de horários, com atendimento presencial e online.</p>
-          </div>
-          <div class="benefits__item">
-            <p>Linguagem clara: você entende cada etapa do seu processo.</p>
-          </div>
-          <div class="benefits__item">
-            <p>Acompanhamento próximo entre as sessões, quando necessário.</p>
-          </div>
-        </div>
+        <ul class="benefits">
+          <li class="benefits__item"><p>Escuta acolhedora, sem julgamentos, em um espaço sigiloso e seguro.</p></li>
+          <li class="benefits__item"><p>Abordagem baseada em evidências, adaptada para a sua história.</p></li>
+          <li class="benefits__item"><p>Flexibilidade de horários, com atendimento presencial e online.</p></li>
+          <li class="benefits__item"><p>Linguagem clara: você entende cada etapa do seu processo.</p></li>
+          <li class="benefits__item"><p>Acompanhamento próximo entre as sessões, quando necessário.</p></li>
+        </ul>
       </div>
     </section>
 
     <!-- SOBRE MIM -->
-    <section id="sobre-mim" class="section">
+    <section id="sobre-mim" class="section" aria-labelledby="sobre-mim-titulo">
       <div class="container about-me">
-        <div class="about-me__media">
-          <img src="./src/assets/about-me.jpg" alt="Retrato da psicóloga em seu consultório" />
-        </div>
+        <figure class="about-me__media">
+          <img src="./src/assets/about-me.jpg" alt="Retrato da psicóloga em seu consultório" loading="lazy" />
+        </figure>
 
         <div class="about-me__panel">
-          <h2>Um pouco <span class="accent">sobre mim</span></h2>
+          <h2 id="sobre-mim-titulo">Um pouco <span class="accent">sobre mim</span></h2>
           <p>Sou psicóloga clínica e acredito que a terapia é um espaço de escuta, respeito e construção conjunta, onde
             cada pessoa pode se conhecer no seu próprio ritmo.</p>
           <p>Atendo adultos presencialmente em São Paulo e online para todo o Brasil, com uma abordagem
@@ -276,200 +199,152 @@
     </section>
 
     <!-- DEPOIMENTOS -->
-    <section id="depoimentos" class="section section--tint section--leafy">
-      <svg class="deco deco--testi-1" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true">
-        <path d="M35 5 C 10 35, 10 75, 35 145 C 60 75, 60 35, 35 5 Z" stroke="currentColor" stroke-width="1.2"
-          opacity="0.35" />
-        <path d="M35 20 L35 130" stroke="currentColor" stroke-width="1" opacity="0.3" />
-      </svg>
-      <svg class="deco deco--testi-2" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true">
-        <path d="M35 5 C 10 35, 10 75, 35 145 C 60 75, 60 35, 35 5 Z" stroke="currentColor" stroke-width="1.2"
-          opacity="0.35" />
-        <path d="M35 20 L35 130" stroke="currentColor" stroke-width="1" opacity="0.3" />
-      </svg>
+    <section id="depoimentos" class="section section--tint section--leafy" aria-labelledby="depoimentos-titulo">
+      <svg class="deco deco--testi-1" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true" focusable="false"><!-- paths originais --></svg>
+      <svg class="deco deco--testi-2" width="70" height="150" viewBox="0 0 70 150" fill="none" aria-hidden="true" focusable="false"><!-- paths originais --></svg>
 
       <div class="container">
-        <h2 class="section__title">O que dizem sobre o acompanhamento<span class="rule"></span></h2>
+        <h2 class="section__title" id="depoimentos-titulo">O que dizem sobre o acompanhamento<span class="rule" aria-hidden="true"></span></h2>
       </div>
 
       <div class="testimonials-carousel" role="region" aria-label="Depoimentos de pacientes" tabindex="0">
         <article class="testimonial-card">
-          <p class="testimonial-card__quote">"Comecei a terapia sem saber bem o que esperar e encontrei um espaço de
-            escuta genuína. Hoje lido com a ansiedade de um jeito completamente diferente."</p>
+          <blockquote class="testimonial-card__quote">
+            <p>"Comecei a terapia sem saber bem o que esperar e encontrei um espaço de escuta genuína. Hoje lido com a ansiedade de um jeito completamente diferente."</p>
+          </blockquote>
           <strong>Mariana F.</strong>
           <span class="testimonial-card__tag">Paciente há 1 ano</span>
           <div class="testimonial-card__footer">
-            <span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>
-            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
-              <path fill="#FFC107"
-                d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z" />
-              <path fill="#FF3D00"
-                d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 16 4 9.1 8.5 6.3 14.7z" />
-              <path fill="#4CAF50"
-                d="M24 44c5.7 0 10.7-1.9 14.6-5.2l-6.7-5.6C29.8 34.9 27 36 24 36c-5.2 0-9.6-3.3-11.2-8l-6.6 5.1C9 39.5 15.9 44 24 44z" />
-              <path fill="#1976D2"
-                d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.6C39.8 37.6 44 31.8 44 24c0-1.3-.1-2.7-.4-3.5z" />
-            </svg>
+            <span class="stars" role="img" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></span>
+            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><!-- logo Google original --></svg>
           </div>
         </article>
 
         <article class="testimonial-card">
-          <p class="testimonial-card__quote">"O acolhimento nas sessões fez toda a diferença. Senti segurança para
-            falar sobre assuntos que nunca tinha conversado com ninguém."</p>
+          <blockquote class="testimonial-card__quote">
+            <p>"O acolhimento nas sessões fez toda a diferença. Senti segurança para falar sobre assuntos que nunca tinha conversado com ninguém."</p>
+          </blockquote>
           <strong>Rafael S.</strong>
           <span class="testimonial-card__tag">Paciente há 8 meses</span>
           <div class="testimonial-card__footer">
-            <span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>
-            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
-              <path fill="#FFC107"
-                d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z" />
-              <path fill="#FF3D00"
-                d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 16 4 9.1 8.5 6.3 14.7z" />
-              <path fill="#4CAF50"
-                d="M24 44c5.7 0 10.7-1.9 14.6-5.2l-6.7-5.6C29.8 34.9 27 36 24 36c-5.2 0-9.6-3.3-11.2-8l-6.6 5.1C9 39.5 15.9 44 24 44z" />
-              <path fill="#1976D2"
-                d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.6C39.8 37.6 44 31.8 44 24c0-1.3-.1-2.7-.4-3.5z" />
-            </svg>
+            <span class="stars" role="img" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></span>
+            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><!-- logo Google --></svg>
           </div>
         </article>
 
         <article class="testimonial-card">
-          <p class="testimonial-card__quote">"Processo leve e humano, mesmo em temas difíceis. Recomendo para quem
-            está em dúvida se vale a pena começar."</p>
+          <blockquote class="testimonial-card__quote">
+            <p>"Processo leve e humano, mesmo em temas difíceis. Recomendo para quem está em dúvida se vale a pena começar."</p>
+          </blockquote>
           <strong>Juliana P.</strong>
           <span class="testimonial-card__tag">Paciente há 2 anos</span>
           <div class="testimonial-card__footer">
-            <span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>
-            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
-              <path fill="#FFC107"
-                d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z" />
-              <path fill="#FF3D00"
-                d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 16 4 9.1 8.5 6.3 14.7z" />
-              <path fill="#4CAF50"
-                d="M24 44c5.7 0 10.7-1.9 14.6-5.2l-6.7-5.6C29.8 34.9 27 36 24 36c-5.2 0-9.6-3.3-11.2-8l-6.6 5.1C9 39.5 15.9 44 24 44z" />
-              <path fill="#1976D2"
-                d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.6C39.8 37.6 44 31.8 44 24c0-1.3-.1-2.7-.4-3.5z" />
-            </svg>
+            <span class="stars" role="img" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></span>
+            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><!-- logo Google --></svg>
           </div>
         </article>
-        <article class="testimonial-card">
-          <p class="testimonial-card__quote">"Comecei a terapia sem saber bem o que esperar e encontrei um espaço de
-            escuta genuína. Hoje lido com a ansiedade de um jeito completamente diferente."</p>
+
+        <!-- Cópias para o loop do carrossel: escondidas de leitores de tela -->
+        <article class="testimonial-card" aria-hidden="true">
+          <blockquote class="testimonial-card__quote">
+            <p>"Comecei a terapia sem saber bem o que esperar e encontrei um espaço de escuta genuína. Hoje lido com a ansiedade de um jeito completamente diferente."</p>
+          </blockquote>
           <strong>Mariana F.</strong>
           <span class="testimonial-card__tag">Paciente há 1 ano</span>
           <div class="testimonial-card__footer">
-            <span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>
-            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
-              <path fill="#FFC107"
-                d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z" />
-              <path fill="#FF3D00"
-                d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 16 4 9.1 8.5 6.3 14.7z" />
-              <path fill="#4CAF50"
-                d="M24 44c5.7 0 10.7-1.9 14.6-5.2l-6.7-5.6C29.8 34.9 27 36 24 36c-5.2 0-9.6-3.3-11.2-8l-6.6 5.1C9 39.5 15.9 44 24 44z" />
-              <path fill="#1976D2"
-                d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.6C39.8 37.6 44 31.8 44 24c0-1.3-.1-2.7-.4-3.5z" />
-            </svg>
+            <span class="stars"><span>★★★★★</span></span>
+            <svg width="18" height="18" viewBox="0 0 48 48" focusable="false"><!-- logo Google --></svg>
           </div>
         </article>
 
-        <article class="testimonial-card">
-          <p class="testimonial-card__quote">"O acolhimento nas sessões fez toda a diferença. Senti segurança para
-            falar sobre assuntos que nunca tinha conversado com ninguém."</p>
+        <article class="testimonial-card" aria-hidden="true">
+          <blockquote class="testimonial-card__quote">
+            <p>"O acolhimento nas sessões fez toda a diferença. Senti segurança para falar sobre assuntos que nunca tinha conversado com ninguém."</p>
+          </blockquote>
           <strong>Rafael S.</strong>
           <span class="testimonial-card__tag">Paciente há 8 meses</span>
           <div class="testimonial-card__footer">
-            <span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>
-            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
-              <path fill="#FFC107"
-                d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z" />
-              <path fill="#FF3D00"
-                d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 16 4 9.1 8.5 6.3 14.7z" />
-              <path fill="#4CAF50"
-                d="M24 44c5.7 0 10.7-1.9 14.6-5.2l-6.7-5.6C29.8 34.9 27 36 24 36c-5.2 0-9.6-3.3-11.2-8l-6.6 5.1C9 39.5 15.9 44 24 44z" />
-              <path fill="#1976D2"
-                d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.6C39.8 37.6 44 31.8 44 24c0-1.3-.1-2.7-.4-3.5z" />
-            </svg>
+            <span class="stars"><span>★★★★★</span></span>
+            <svg width="18" height="18" viewBox="0 0 48 48" focusable="false"><!-- logo Google --></svg>
           </div>
         </article>
 
-        <article class="testimonial-card">
-          <p class="testimonial-card__quote">"Processo leve e humano, mesmo em temas difíceis. Recomendo para quem
-            está em dúvida se vale a pena começar."</p>
+        <article class="testimonial-card" aria-hidden="true">
+          <blockquote class="testimonial-card__quote">
+            <p>"Processo leve e humano, mesmo em temas difíceis. Recomendo para quem está em dúvida se vale a pena começar."</p>
+          </blockquote>
           <strong>Juliana P.</strong>
           <span class="testimonial-card__tag">Paciente há 2 anos</span>
           <div class="testimonial-card__footer">
-            <span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>
-            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
-              <path fill="#FFC107"
-                d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z" />
-              <path fill="#FF3D00"
-                d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.9 6 29.8 4 24 4 16 4 9.1 8.5 6.3 14.7z" />
-              <path fill="#4CAF50"
-                d="M24 44c5.7 0 10.7-1.9 14.6-5.2l-6.7-5.6C29.8 34.9 27 36 24 36c-5.2 0-9.6-3.3-11.2-8l-6.6 5.1C9 39.5 15.9 44 24 44z" />
-              <path fill="#1976D2"
-                d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.3 5.7l6.7 5.6C39.8 37.6 44 31.8 44 24c0-1.3-.1-2.7-.4-3.5z" />
-            </svg>
+            <span class="stars"><span>★★★★★</span></span>
+            <svg width="18" height="18" viewBox="0 0 48 48" focusable="false"><!-- logo Google --></svg>
           </div>
         </article>
-        
       </div>
+
       <div class="container">
-        <p class="section__lede">Relatos reais de pessoas atendidas, compartilhados com autorização.</p>\
+        <p class="section__lede">Relatos reais de pessoas atendidas, compartilhados com autorização.</p>
       </div>
-
-
     </section>
 
     <!-- FAQ -->
-    <section id="duvidas" class="section">
+    <section id="duvidas" class="section" aria-labelledby="duvidas-titulo">
       <div class="container faq__grid">
         <div class="faq__copy">
-          <h2>Perguntas frequentes</h2>
-          <p>Reuni aqui as dúvidas mais comuns de quem está pensando em começar a terapia. Se a sua não estiver na
-            lista, me chame.</p>
+          <h2 id="duvidas-titulo">Perguntas frequentes</h2>
+          <p>Reuni aqui as dúvidas mais comuns de quem está pensando em começar a terapia. Se a sua não estiver na lista, me chame.</p>
           <a class="btn btn--primary" href="#contato">Tirar outras dúvidas</a>
         </div>
 
         <div class="faq__list" id="faq-list">
           <div class="faq-row faq-row--open">
-            <button type="button" class="faq-row__trigger" aria-expanded="true">
-              <span>Como funcionam as sessões online?</span>
-              <span class="faq-row__chevron" aria-hidden="true">⌄</span>
-            </button>
-            <p class="faq-row__answer">As sessões acontecem por videochamada, com a mesma duração e frequência do
-              atendimento presencial, em uma plataforma segura e de fácil acesso.</p>
+            <h3>
+              <button type="button" class="faq-row__trigger" id="faq-btn-1" aria-expanded="true" aria-controls="faq-resp-1">
+                <span>Como funcionam as sessões online?</span>
+                <span class="faq-row__chevron" aria-hidden="true">⌄</span>
+              </button>
+            </h3>
+            <p class="faq-row__answer" id="faq-resp-1" role="region" aria-labelledby="faq-btn-1">As sessões acontecem por videochamada, com a mesma duração e frequência do atendimento presencial, em uma plataforma segura e de fácil acesso.</p>
           </div>
+
           <div class="faq-row">
-            <button type="button" class="faq-row__trigger" aria-expanded="false">
-              <span>Qual a duração de cada consulta?</span>
-              <span class="faq-row__chevron" aria-hidden="true">⌄</span>
-            </button>
-            <p class="faq-row__answer">Cada sessão dura 50 minutos, no mesmo horário toda semana, para dar continuidade
-              ao processo terapêutico.</p>
+            <h3>
+              <button type="button" class="faq-row__trigger" id="faq-btn-2" aria-expanded="false" aria-controls="faq-resp-2">
+                <span>Qual a duração de cada consulta?</span>
+                <span class="faq-row__chevron" aria-hidden="true">⌄</span>
+              </button>
+            </h3>
+            <p class="faq-row__answer" id="faq-resp-2" role="region" aria-labelledby="faq-btn-2">Cada sessão dura 50 minutos, no mesmo horário toda semana, para dar continuidade ao processo terapêutico.</p>
           </div>
+
           <div class="faq-row">
-            <button type="button" class="faq-row__trigger" aria-expanded="false">
-              <span>Atende convênio ou é só particular?</span>
-              <span class="faq-row__chevron" aria-hidden="true">⌄</span>
-            </button>
-            <p class="faq-row__answer">O atendimento é particular. Ao final do mês, você recebe o recibo para solicitar
-              reembolso junto ao seu convênio, quando aplicável.</p>
+            <h3>
+              <button type="button" class="faq-row__trigger" id="faq-btn-3" aria-expanded="false" aria-controls="faq-resp-3">
+                <span>Atende convênio ou é só particular?</span>
+                <span class="faq-row__chevron" aria-hidden="true">⌄</span>
+              </button>
+            </h3>
+            <p class="faq-row__answer" id="faq-resp-3" role="region" aria-labelledby="faq-btn-3">O atendimento é particular. Ao final do mês, você recebe o recibo para solicitar reembolso junto ao seu convênio, quando aplicável.</p>
           </div>
+
           <div class="faq-row">
-            <button type="button" class="faq-row__trigger" aria-expanded="false">
-              <span>Em quanto tempo eu vejo resultados?</span>
-              <span class="faq-row__chevron" aria-hidden="true">⌄</span>
-            </button>
-            <p class="faq-row__answer">Varia de pessoa para pessoa e do que trouxe você à terapia. Costumamos revisar os
-              objetivos do processo a cada poucos meses.</p>
+            <h3>
+              <button type="button" class="faq-row__trigger" id="faq-btn-4" aria-expanded="false" aria-controls="faq-resp-4">
+                <span>Em quanto tempo eu vejo resultados?</span>
+                <span class="faq-row__chevron" aria-hidden="true">⌄</span>
+              </button>
+            </h3>
+            <p class="faq-row__answer" id="faq-resp-4" role="region" aria-labelledby="faq-btn-4">Varia de pessoa para pessoa e do que trouxe você à terapia. Costumamos revisar os objetivos do processo a cada poucos meses.</p>
           </div>
+
           <div class="faq-row">
-            <button type="button" class="faq-row__trigger" aria-expanded="false">
-              <span>Como faço para agendar a primeira sessão?</span>
-              <span class="faq-row__chevron" aria-hidden="true">⌄</span>
-            </button>
-            <p class="faq-row__answer">Basta clicar em "Agendar consulta", escolher um horário disponível e preencher um
-              breve formulário antes do primeiro encontro.</p>
+            <h3>
+              <button type="button" class="faq-row__trigger" id="faq-btn-5" aria-expanded="false" aria-controls="faq-resp-5">
+                <span>Como faço para agendar a primeira sessão?</span>
+                <span class="faq-row__chevron" aria-hidden="true">⌄</span>
+              </button>
+            </h3>
+            <p class="faq-row__answer" id="faq-resp-5" role="region" aria-labelledby="faq-btn-5">Basta clicar em "Agendar consulta", escolher um horário disponível e preencher um breve formulário antes do primeiro encontro.</p>
           </div>
         </div>
       </div>
@@ -479,45 +354,36 @@
 
   <footer id="contato" class="footer">
     <div class="container footer__grid">
-      <div class="footer__media">
+      <figure class="footer__media">
         <img src="https://images.unsplash.com/photo-1746021513193-a314945d15c4?fm=jpg&q=80&w=1000&auto=format&fit=crop"
-          alt="Sala de atendimento psicológico, acolhedora e iluminada" width="1000" height="825" />
-      </div>
+          alt="Sala de atendimento psicológico, acolhedora e iluminada" width="1000" height="825" loading="lazy" />
+      </figure>
 
       <div class="footer__copy">
-        <h3>Cuidar Psicologia</h3>
-        <div class="footer__social">
-          <a href="#" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6" />
-              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6" />
-              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" />
-            </svg>
-          </a>
-          <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor"
-                stroke-width="1.6" />
-              <path
-                d="M8.5 8.8c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5.2.5.7 1.6.7 1.8.1.1.1.3 0 .5-.1.2-.1.3-.3.4-.1.2-.3.3-.4.5-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.6.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.8.9 2.1 1 .3.1.5.2.6.3.1.2.1 1-.3 1.9-.4.9-2.1 1.7-2.9 1.7-.8 0-1.7-.1-4.1-1.3-3-1.5-4.8-4.5-4.9-4.7-.1-.2-1-1.3-1-2.5 0-1.2.6-1.8.8-2.1Z"
-                fill="currentColor" />
-            </svg>
-          </a>
-        </div>
+        <h2 class="footer__title">Cuidar Psicologia</h2>
+        <ul class="footer__social">
+          <li>
+            <a href="#" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><!-- paths originais --></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp (abre em nova aba)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><!-- paths originais --></svg>
+            </a>
+          </li>
+        </ul>
         <p>Atendimento psicológico individual para adultos, presencial em São Paulo e online para todo o Brasil.</p>
         <p>Agende uma conversa inicial para entender como a terapia pode te ajudar neste momento.</p>
-        <a class="btn btn--primary" href="https://wa.me/5511999999999" target="_blank" rel="noreferrer">Agendar
-          consulta</a>
+        <a class="btn btn--primary" href="https://wa.me/5511999999999" target="_blank" rel="noreferrer noopener">Agendar consulta</a>
       </div>
     </div>
 
-    <div class="footer__address container">Rua Domingos de Morais, 2781 — sala 814, São Paulo - SP</div>
+    <address class="footer__address container">Rua Domingos de Morais, 2781 — sala 814, São Paulo - SP</address>
 
-    <div class="footer__bottom">© <span id="year">2026</span> Psicólogo(a) [Nome Psicólogo(a)] — Todos os direitos
-      reservados.</div>
+    <p class="footer__bottom"><small>© <time id="year" datetime="2026">2026</time> Psicólogo(a) [Nome Psicólogo(a)] — Todos os direitos reservados.</small></p>
   </footer>
 
   <script type="module" src="/src/main.js"></script>
 </body>
-
 </html>

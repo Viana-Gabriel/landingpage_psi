@@ -13,16 +13,19 @@
   --max-width: 1280px;
 }
 
+
 /* =====================================================================
    BASE (mobile first)
-   Breakpoints: 561px (tablet pequeno) e 901px (desktop)
-   ===================================================================== */
+   Breakpoints: 561px (tablet pequeno) e 1024px (desktop)
+   ====================================================================== */
 * { box-sizing: border-box; }
+
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 76px;
 }
+
 
 body {
   margin: 0;
@@ -32,6 +35,7 @@ body {
   line-height: 1.6;
 }
 
+
 h1, h2, h3 {
   font-family: "Poppins", "Inter", sans-serif;
   color: var(--teal-700);
@@ -39,9 +43,36 @@ h1, h2, h3 {
   line-height: 1.25;
 }
 
+
 p { margin: 0 0 1em; color: var(--ink-soft); }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* Reset de figure (margem padrão do navegador) */
+figure { margin: 0; }
+
+/* Link "pular para o conteúdo" */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 100;
+  padding: 0.7em 1.2em;
+  background: var(--teal-900);
+  color: var(--white);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 12px; }
+
+/* Foco visível para teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
 
 .container {
   max-width: var(--max-width);
@@ -49,8 +80,10 @@ img { max-width: 100%; display: block; }
   padding: 0 24px;
 }
 
+
 .accent { color: var(--orange); }
 .center { text-align: center; }
+
 
 /* Buttons */
 .btn {
@@ -68,6 +101,7 @@ img { max-width: 100%; display: block; }
 .btn--primary { background: var(--orange); color: var(--white); }
 .btn--primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
 
+
 /* ---------- Header (mobile: sticky + translúcido) ---------- */
 .header {
   position: sticky;
@@ -81,6 +115,7 @@ img { max-width: 100%; display: block; }
 }
 .header--scrolled { box-shadow: 0 6px 24px rgba(31, 63, 61, 0.08); }
 
+
 .header__inner {
   display: flex;
   align-items: center;
@@ -89,12 +124,14 @@ img { max-width: 100%; display: block; }
   padding-bottom: 16px;
 }
 
+
 .brand {
   display: flex;
   align-items: center;
   gap: 10px;
   white-space: nowrap;
 }
+
 
 /* Menu mobile: painel abaixo do header */
 .nav {
@@ -113,6 +150,7 @@ img { max-width: 100%; display: block; }
 }
 .nav--open { display: flex; }
 
+
 .nav__toggle {
   display: flex;
   flex-direction: column;
@@ -130,11 +168,13 @@ img { max-width: 100%; display: block; }
   background: var(--teal-700);
 }
 
+
 .header__cta {
   display: none;
   margin-left: auto;
   white-space: nowrap;
 }
+
 
 /* ---------- Hero (mobile: imagem em cima, texto embaixo) ---------- */
 .hero {
@@ -145,6 +185,7 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
+
 .hero__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -154,11 +195,13 @@ img { max-width: 100%; display: block; }
   padding: 32px 24px 56px;
 }
 
+
 .hero__copy {
   position: relative;
   z-index: 2;
   max-width: 480px;
 }
+
 
 .hero__media {
   position: relative;
@@ -176,6 +219,7 @@ img { max-width: 100%; display: block; }
   box-shadow: none;
 }
 
+
 .deco {
   position: absolute;
   color: var(--teal-600);
@@ -183,6 +227,7 @@ img { max-width: 100%; display: block; }
 }
 .deco--hero-1,
 .deco--hero-2 { display: none; }
+
 
 /* ---------- Sections ---------- */
 .section {
@@ -192,12 +237,14 @@ img { max-width: 100%; display: block; }
 .section--tint { background: var(--cream); }
 .section--leafy { overflow: hidden; }
 
+
 .section__title {
   text-align: center;
   font-size: clamp(1.5rem, 2.6vw, 2rem);
   max-width: 24ch;
   margin: 0 auto 0.5em;
 }
+
 
 .rule {
   display: block;
@@ -220,11 +267,13 @@ img { max-width: 100%; display: block; }
 .rule::before { left: -3px; }
 .rule::after { right: -3px; }
 
+
 .section__lede {
   text-align: center;
   max-width: 62ch;
   margin: 36px auto 0;
 }
+
 
 /* ---------- Cards row (genérico) ---------- */
 .cards-row {
@@ -236,7 +285,9 @@ img { max-width: 100%; display: block; }
 }
 .cards-row--3 { grid-template-columns: 1fr; }
 
+
 .cards-row:not(.cards-row--3) + .section__lede { margin-top: 40px; }
+
 
 /* ---------- Serviços (mobile: carrossel) ---------- */
 #servicos .cards-row {
@@ -252,10 +303,12 @@ img { max-width: 100%; display: block; }
 }
 #servicos .cards-row::-webkit-scrollbar { display: none; }
 
+
 #servicos .service-card {
   flex: 0 0 min(78%, 300px);
   scroll-snap-align: start;
 }
+
 
 .service-card {
   background: var(--white);
@@ -292,6 +345,7 @@ img { max-width: 100%; display: block; }
 }
 .service-card__icon svg { width: 24px; height: 24px; }
 
+
 /* Bolinhas do carrossel */
 .carousel-dots {
   display: flex;
@@ -314,13 +368,14 @@ img { max-width: 100%; display: block; }
   background: var(--orange);
 }
 
-/* ---------- Steps ---------- */
+
 /* ---------- Steps: cards numerados ---------- */
 .step-row {
   display: grid;
   align-items: stretch;
   gap: 24px;
 }
+
 
 .step-card {
   display: flex;
@@ -329,21 +384,25 @@ img { max-width: 100%; display: block; }
   width: 100%;
   padding: 28px 24px 32px;
 
+
   background: var(--cream);
   border: 1px solid transparent;
   border-radius: var(--radius);
   box-shadow: 0 6px 14px rgba(31, 63, 61, 0.08);
+
 
   font: inherit;
   color: inherit;
   text-align: left;
   cursor: pointer;
 
+
   transition:
     border-color 0.2s ease,
     background-color 0.2s ease,
     box-shadow 0.2s ease;
 }
+
 
 /* Remove as linhas e a numeração automática da versão anterior */
 .step-card::before,
@@ -353,42 +412,56 @@ img { max-width: 100%; display: block; }
   content: none;
 }
 
+
 /* Número do card */
 .step-card__dot {
   display: grid;
   place-items: center;
   flex-shrink: 0;
 
+
   width: 44px;
   height: 44px;
   margin-bottom: 24px;
+
 
   border: 1px solid var(--orange);
   border-radius: 50%;
   background: var(--white);
   color: var(--orange);
 
+
   font-family: "Poppins", "Inter", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1;
+
 
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
 }
 
-.step-card h3 {
+
+/* Título e texto do passo (antes eram h3 e p dentro do button) */
+.step-card__title {
+  display: block;
   margin: 0 0 14px;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 1.1rem;
+  font-weight: 700;
   line-height: 1.4;
+  color: var(--teal-700);
 }
 
-.step-card p {
+.step-card__text {
+  display: block;
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.75;
+  color: var(--ink-soft);
 }
+
 
 /* Destaque do card selecionado */
 .step-card--active {
@@ -397,10 +470,12 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow);
 }
 
+
 .step-card--active .step-card__dot {
   background: var(--orange);
   color: var(--white);
 }
+
 
 @media (hover: hover) {
   .step-card:hover:not(.step-card--active) {
@@ -408,16 +483,17 @@ img { max-width: 100%; display: block; }
   }
 }
 
+
 .step-card:focus-visible {
   outline: 2px solid var(--orange);
   outline-offset: 4px;
 }
 
 
-
 /* ---------- About ---------- */
 .deco--about-1 { top: 40px; left: 4%; }
 .deco--about-2 { bottom: 20px; right: 6%; transform: scaleX(-1); }
+
 
 .about__grid {
   display: grid;
@@ -434,10 +510,14 @@ img { max-width: 100%; display: block; }
 }
 .about__copy h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
 
+
 .benefits {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 .benefits__item {
   background: var(--white);
@@ -448,18 +528,21 @@ img { max-width: 100%; display: block; }
 }
 .benefits__item p { margin: 0; font-size: 0.92rem; }
 
+
 /* ---------- Sobre mim ---------- */
 .about-me {
   display: grid;
   grid-template-columns: 1fr;
-  max-width: var(--max-width);                 /* 900px de conteúdo + padding do container */
+  max-width: var(--max-width);
 }
+
 
 .about-me__media img {
   width: 100%;
   aspect-ratio: 345 / 353;
   object-fit: cover;
 }
+
 
 .about-me__panel {
   display: flex;
@@ -469,10 +552,12 @@ img { max-width: 100%; display: block; }
   background: var(--cream);
 }
 
+
 .about-me__panel h2 {
   font-size: clamp(1.5rem, 2.4vw, 1.75rem);
   margin-bottom: 0.8em;
 }
+
 
 .about-me__panel p {
   max-width: 40ch;
@@ -480,6 +565,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.875rem;
   line-height: 1.55;
 }
+
 
 /* Botão com contorno (secundário) */
 .btn--outline {
@@ -493,6 +579,7 @@ img { max-width: 100%; display: block; }
 }
 .btn--outline:hover { background: rgba(47, 95, 92, 0.06); }
 
+
 /* Botão principal largo, cantos suaves (não em pílula) */
 .about-me__panel .btn--primary {
   width: min(100%, 272px);
@@ -500,29 +587,31 @@ img { max-width: 100%; display: block; }
   border-radius: 8px;
 }
 
-@media (min-width: 901px) {
-
-}
 
 /* ---------- Depoimentos: carrossel nativo com CSS ---------- */
 #depoimentos .testimonials-carousel {
   --carousel-gap: 16px;
 
+
   display: flex;
   align-items: stretch;
   gap: var(--carousel-gap);
 
+
   margin: 40px -24px 0;
   padding: 12px 24px 24px;
+
 
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-padding-inline: 24px;
 
+
   /* Barra discreta, também útil para navegar no desktop */
   scrollbar-width: thin;
   scrollbar-color: var(--orange) transparent;
 }
+
 
 /* Mobile: um card e um pedaço do próximo */
 #depoimentos .testimonials-carousel > .testimonial-card {
@@ -530,16 +619,20 @@ img { max-width: 100%; display: block; }
   min-width: 0;
   margin: 0;
 
+
   display: flex;
   flex-direction: column;
+
 
   padding: 28px 24px;
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 
+
   scroll-snap-align: start;
 }
+
 
 /* Texto com espaço consistente antes do nome */
 #depoimentos .testimonial-card__quote {
@@ -547,19 +640,31 @@ img { max-width: 100%; display: block; }
   min-height: 0;
   margin: 0 0 24px;
 
+
   font-size: 0.95rem;
   line-height: 1.75;
 }
+
+
+/* O <p> interno do blockquote herda o tamanho/entrelinha do container */
+#depoimentos .testimonial-card__quote p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 
 #depoimentos .testimonial-card > strong {
   display: block;
   margin-bottom: 4px;
 }
 
+
 #depoimentos .testimonial-card__tag {
   display: block;
   margin-bottom: 20px;
 }
+
 
 #depoimentos .testimonial-card__footer {
   display: flex;
@@ -568,30 +673,36 @@ img { max-width: 100%; display: block; }
   gap: 16px;
 }
 
+
 /* Foco visível para quem navega pelo teclado */
 #depoimentos .testimonials-carousel:focus-visible {
   outline: 2px solid var(--orange);
   outline-offset: 4px;
 }
 
+
 /* Barra de rolagem em navegadores WebKit */
 #depoimentos .testimonials-carousel::-webkit-scrollbar {
   height: 6px;
 }
 
+
 #depoimentos .testimonials-carousel::-webkit-scrollbar-track {
   background: transparent;
 }
+
 
 #depoimentos .testimonials-carousel::-webkit-scrollbar-thumb {
   background: var(--orange);
   border-radius: 999px;
 }
 
+
 /* Espaço até a observação abaixo dos cards */
 #depoimentos .testimonials-carousel + .section__lede {
   margin-top: 28px;
 }
+
 
 /* ---------- FAQ ---------- */
 .faq__grid {
@@ -613,6 +724,14 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 .faq-row--open { border-color: var(--orange); }
+
+/* h3 wrapper do botão: não herdar Poppins/cor/tamanho dos títulos */
+.faq-row h3 {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
 .faq-row__trigger {
   width: 100%;
   display: flex;
@@ -645,6 +764,7 @@ img { max-width: 100%; display: block; }
 }
 .faq-row--open .faq-row__answer { display: block; }
 
+
 /* ---------- Footer ---------- */
 .footer {
   background: var(--teal-700);
@@ -663,12 +783,14 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 4 / 3.3;
   object-fit: cover;
 }
-.footer__copy h3 { color: var(--white); font-size: 1.3rem; }
+.footer__title { color: var(--white); font-size: 1.3rem; }
 .footer__copy p { color: #cfe2df; font-size: 0.95rem; }
 .footer__social {
   display: flex;
   gap: 12px;
-  margin-bottom: 18px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
 }
 .footer__social a {
   width: 36px;
@@ -681,6 +803,8 @@ img { max-width: 100%; display: block; }
   color: var(--white);
 }
 .footer__address {
+  display: block;
+  font-style: normal;
   padding-top: 24px;
   padding-bottom: 28px;
   font-size: 0.9rem;
@@ -688,34 +812,41 @@ img { max-width: 100%; display: block; }
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 .footer__bottom {
+  margin: 0;
   background: var(--teal-900);
   text-align: center;
   padding: 18px 24px;
   font-size: 0.82rem;
   color: #bcd2cf;
 }
+.footer__bottom small { font-size: inherit; }
+
 
 /* =====================================================================
    561px+  (tablet pequeno)
-   ===================================================================== */
+   ====================================================================== */
 @media (min-width: 561px) {
   .section { padding: 88px 0; }
+
 
   .cards-row { grid-template-columns: repeat(2, 1fr); }
   .cards-row--3 { grid-template-columns: 1fr; }
 
+
   #depoimentos .testimonials-carousel {
     --carousel-gap: 20px;
   }
+
 
   #depoimentos .testimonials-carousel > .testimonial-card {
     flex-basis: 60%;
   }
 }
 
+
 /* =====================================================================
-   901px+  (desktop)
-   ===================================================================== */
+   1024px+  (desktop)
+   ====================================================================== */
 @media (min-width: 1024px) {
   /* Header fixo, transparente sobre o hero; translúcido ao rolar */
   .header {
@@ -736,6 +867,7 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 6px 24px rgba(31, 63, 61, 0.08);
   }
 
+
   .nav {
     position: static;
     display: flex;
@@ -748,6 +880,7 @@ img { max-width: 100%; display: block; }
   }
   .nav__toggle { display: none; }
   .header__cta { display: inline-flex; }
+
 
   /* Hero: imagem na metade direita, com borda ondulada */
   .hero {
@@ -774,6 +907,7 @@ img { max-width: 100%; display: block; }
   .deco--hero-1 { display: block; top: auto; right: auto; bottom: 16px; left: -13%; }
   .deco--hero-2 { display: block; top: auto; bottom: 16px; left: -95%; transform: scaleX(-1); }
 
+
   /* Serviços: 5 cards escalonados (sem carrossel) */
   #servicos .cards-row {
     display: grid;
@@ -788,12 +922,14 @@ img { max-width: 100%; display: block; }
   .cards-row:not(.cards-row--3) .service-card:nth-child(even) { margin-top: 24px; }
   .carousel-dots { display: none; }
 
+
   .cards-row { grid-template-columns: repeat(5, 1fr); }
   .cards-row--3 { grid-template-columns: repeat(3, 1fr); }
 
+
   /* Grids de duas colunas */
   .about__grid { grid-template-columns: 0.95fr 1.05fr; }
-    .about-me {
+  .about-me {
     grid-template-columns: 41fr 59fr;   /* foto ≈ 345px, painel ≈ 502px */
   }
   .about-me__media img {
@@ -802,10 +938,9 @@ img { max-width: 100%; display: block; }
   .about-me__panel {
     margin-top: 34px;                   /* painel começa abaixo do topo da foto */
     padding: 40px 40px 28px 35px;
-    
   }
   .about-me__panel p {
-    max-width: 52ch;       /* era 40ch */
+    max-width: 52ch;
     font-size: 0.95rem;
   }
   .about-me__panel h2 {
@@ -817,16 +952,20 @@ img { max-width: 100%; display: block; }
   .faq__grid { grid-template-columns: 0.85fr 1.15fr; }
   .footer__grid { grid-template-columns: 1fr 1.1fr; }
 
- #depoimentos .testimonials-carousel {
+
+  #depoimentos .testimonials-carousel {
     --card-width: clamp(340px, 32vw, 460px);
     --carousel-gap: 32px;
+
 
     display: flex;
     align-items: stretch;
     gap: var(--carousel-gap);
 
+
     width: 100%;
     margin: 48px 0 0;
+
 
     /*
      * Espaço lateral para o primeiro e o último card
@@ -836,11 +975,14 @@ img { max-width: 100%; display: block; }
     padding-inline:
       calc((100% - var(--card-width)) / 2);
 
+
     overflow-x: auto;
     scroll-snap-type: x mandatory;
 
+
     /* Substitui os 8px/24px da versão anterior */
     scroll-padding-inline: 0;
+
 
     /*
      * As bordas ficam mais transparentes.
@@ -856,6 +998,7 @@ img { max-width: 100%; display: block; }
       transparent 100%
     );
 
+
     mask-image: linear-gradient(
       to right,
       transparent 0%,
@@ -866,29 +1009,37 @@ img { max-width: 100%; display: block; }
       transparent 100%
     );
 
+
     scrollbar-width: thin;
     scrollbar-color: var(--orange) transparent;
   }
+
 
   #depoimentos .testimonials-carousel > .testimonial-card {
     flex: 0 0 var(--card-width);
     min-width: 0;
     margin: 0;
 
+
     padding: 36px 32px;
 
+
     scroll-snap-align: center;
+
 
     border-radius: 20px;
     box-shadow: 0 16px 36px rgba(31, 63, 61, 0.12);
 
+
     transform-origin: center;
   }
+
 
   #depoimentos .testimonials-carousel + .container .section__lede {
     margin-top: 24px;
   }
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -897,10 +1048,12 @@ img { max-width: 100%; display: block; }
   }
 }
 
+
 /* Oculta a barra sem desativar a rolagem */
 #depoimentos .testimonials-carousel {
   scrollbar-width: none;
 }
+
 
 #depoimentos .testimonials-carousel::-webkit-scrollbar {
   display: none;
@@ -908,8 +1061,9 @@ img { max-width: 100%; display: block; }
   height: 0;
 }
 
+
 @supports (animation-timeline: view(inline)) {
-  @media (min-width: 901px) and (prefers-reduced-motion: no-preference) {
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
     #depoimentos .testimonials-carousel > .testimonial-card {
       animation: testimonial-focus linear both;
       animation-timeline: view(inline);
@@ -918,26 +1072,31 @@ img { max-width: 100%; display: block; }
   }
 }
 
+
 @keyframes testimonial-focus {
   0% {
     opacity: 0.25;
     scale: 0.88;
   }
 
+
   25% {
     opacity: 0.5;
     scale: 0.93;
   }
+
 
   50% {
     opacity: 1;
     scale: 1;
   }
 
+
   75% {
     opacity: 0.5;
     scale: 0.93;
   }
+
 
   100% {
     opacity: 0.25;
@@ -945,12 +1104,14 @@ img { max-width: 100%; display: block; }
   }
 }
 
+
 /* Mouse: indica que o carrossel pode ser arrastado */
 @media (hover: hover) and (pointer: fine) {
   #depoimentos .testimonials-carousel {
     cursor: grab;
   }
 }
+
 
 /* Durante o arraste, evita disputar com o encaixe dos cards */
 #depoimentos .testimonials-carousel.is-dragging {
