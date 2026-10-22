@@ -1,3 +1,7 @@
+/* =====================================================================
+   VARIÁVEIS
+   ===================================================================== */
+
 :root {
   --teal-900: #1f3f3d;
   --teal-700: #2f5f5c;
@@ -15,12 +19,14 @@
 }
 
 /* =====================================================================
-   BASE (mobile first)
-   Breakpoints: 561px (tablet pequeno) e 1024px (desktop)
+   BASE
    ===================================================================== */
+
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -58,9 +64,26 @@ img {
   max-width: 100%;
 }
 
-figure { margin: 0; }
+figure {
+  margin: 0;
+}
 
-/* Link "pular para o conteúdo" */
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.accent {
+  color: var(--orange);
+}
+
+.center {
+  text-align: center;
+}
+
+/* ---------- Acessibilidade ---------- */
+
 .skip-link {
   position: absolute;
   inset-block-start: -100px;
@@ -74,25 +97,20 @@ figure { margin: 0; }
   transition: inset-block-start 0.15s ease;
 }
 
-.skip-link:focus { inset-block-start: 12px; }
+.skip-link:focus {
+  inset-block-start: 12px;
+}
 
-/* Foco visível para teclado */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--orange);
   outline-offset: 3px;
 }
 
-.container {
-  max-width: var(--max-width);
-  margin-inline: auto;
-  padding-inline: 24px;
-}
+/* =====================================================================
+   BOTÕES
+   ===================================================================== */
 
-.accent { color: var(--orange); }
-.center { text-align: center; }
-
-/* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -103,7 +121,9 @@ button:focus-visible {
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: translate 0.15s ease, background-color 0.15s ease;
+  transition:
+    translate 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .btn--primary {
@@ -116,7 +136,24 @@ button:focus-visible {
   translate: 0 -1px;
 }
 
-/* ---------- Header (mobile: sticky + translúcido) ---------- */
+.btn--outline {
+  margin: 12px 0 20px;
+  padding: 0.5em 1.5em;
+  border: 1px solid var(--teal-700);
+  color: var(--teal-700);
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.btn--outline:hover {
+  background: rgb(47 95 92 / 0.06);
+}
+
+/* =====================================================================
+   HEADER E NAVEGAÇÃO
+   ===================================================================== */
+
 .header {
   position: sticky;
   inset-block-start: 0;
@@ -124,10 +161,15 @@ button:focus-visible {
   background: rgb(255 255 255 / 0.92);
   border-block-end: 1px solid rgb(31 63 61 / 0.06);
   backdrop-filter: blur(6px);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.header--scrolled { box-shadow: 0 6px 24px rgb(31 63 61 / 0.08); }
+.header--scrolled {
+  box-shadow: 0 6px 24px rgb(31 63 61 / 0.08);
+}
 
 .header__inner {
   display: flex;
@@ -143,7 +185,6 @@ button:focus-visible {
   white-space: nowrap;
 }
 
-/* Menu mobile: painel abaixo do header */
 .nav {
   position: absolute;
   inset-block-start: 100%;
@@ -157,7 +198,9 @@ button:focus-visible {
   border-block-end: 1px solid #eee;
 }
 
-.nav--open { display: flex; }
+.nav--open {
+  display: flex;
+}
 
 .nav__toggle {
   display: flex;
@@ -183,7 +226,10 @@ button:focus-visible {
   white-space: nowrap;
 }
 
-/* ---------- Hero (mobile: imagem em cima, texto embaixo) ---------- */
+/* =====================================================================
+   HERO
+   ===================================================================== */
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -227,21 +273,37 @@ button:focus-visible {
 }
 
 .deco--hero-1,
-.deco--hero-2 { display: none; }
+.deco--hero-2 {
+  display: none;
+}
 
-/* ---------- Sections ---------- */
+/* =====================================================================
+   SEÇÕES E ELEMENTOS COMPARTILHADOS
+   ===================================================================== */
+
 .section {
   position: relative;
   padding-block: 64px;
 }
 
-.section--tint { background: var(--cream); }
-.section--leafy { overflow: hidden; }
+.section--tint {
+  background: var(--cream);
+}
+
+.section--leafy {
+  overflow: hidden;
+}
 
 .section__title {
   max-width: 24ch;
   margin: 0 auto 0.5em;
   font-size: clamp(1.5rem, 2.6vw, 2rem);
+  text-align: center;
+}
+
+.section__lede {
+  max-width: 62ch;
+  margin: 36px auto 0;
   text-align: center;
 }
 
@@ -265,16 +327,14 @@ button:focus-visible {
   background: var(--orange);
 }
 
-.rule::before { inset-inline-start: -3px; }
-.rule::after { inset-inline-end: -3px; }
-
-.section__lede {
-  max-width: 62ch;
-  margin: 36px auto 0;
-  text-align: center;
+.rule::before {
+  inset-inline-start: -3px;
 }
 
-/* ---------- Cards row (genérico) ---------- */
+.rule::after {
+  inset-inline-end: -3px;
+}
+
 .cards-row {
   display: grid;
   grid-template-columns: 1fr;
@@ -283,11 +343,14 @@ button:focus-visible {
   margin-block-start: 48px;
 }
 
-.cards-row--3 { grid-template-columns: 1fr; }
+.cards-row:not(.cards-row--3) + .section__lede {
+  margin-block-start: 40px;
+}
 
-.cards-row:not(.cards-row--3) + .section__lede { margin-block-start: 40px; }
+/* =====================================================================
+   SERVIÇOS
+   ===================================================================== */
 
-/* ---------- Serviços (mobile: carrossel) ---------- */
 #servicos .cards-row {
   display: flex;
   gap: 16px;
@@ -300,7 +363,9 @@ button:focus-visible {
   scrollbar-width: none;
 }
 
-#servicos .cards-row::-webkit-scrollbar { display: none; }
+#servicos .cards-row::-webkit-scrollbar {
+  display: none;
+}
 
 #servicos .service-card {
   flex: 0 0 min(78%, 300px);
@@ -349,7 +414,6 @@ button:focus-visible {
   height: 24px;
 }
 
-/* Bolinhas do carrossel */
 .carousel-dots {
   display: flex;
   justify-content: center;
@@ -365,7 +429,9 @@ button:focus-visible {
   border-radius: 999px;
   background: #d8d2c6;
   cursor: pointer;
-  transition: inline-size 0.2s ease, background-color 0.2s ease;
+  transition:
+    inline-size 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .carousel-dots button[aria-current="true"] {
@@ -373,9 +439,11 @@ button:focus-visible {
   background: var(--orange);
 }
 
-/* ---------- Steps: cards numerados ---------- */
+/* =====================================================================
+   ETAPAS DO ATENDIMENTO
+   ===================================================================== */
+
 .step-row {
-  display: grid;
   align-items: stretch;
   gap: 24px;
 }
@@ -394,14 +462,18 @@ button:focus-visible {
   color: inherit;
   text-align: start;
   cursor: pointer;
-  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-/* Remove linhas e numeração automática da versão anterior */
 .step-card::before,
 .step-card::after,
 .step-card__dot::before,
-.step-card__dot::after { content: none; }
+.step-card__dot::after {
+  content: none;
+}
 
 .step-card__dot {
   display: grid;
@@ -418,10 +490,11 @@ button:focus-visible {
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
-/* Título e texto do passo (antes eram h3 e p dentro do button) */
 .step-card__title {
   display: block;
   margin: 0 0 14px;
@@ -451,16 +524,20 @@ button:focus-visible {
   background: var(--orange);
 }
 
+.step-card:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+}
+
 @media (hover: hover) {
   .step-card:hover:not(.step-card--active) {
     border-color: rgb(201 128 47 / 0.45);
   }
 }
 
-.step-card:focus-visible {
-  outline: 2px solid var(--orange);
-  outline-offset: 4px;
-}
+/* =====================================================================
+   SOBRE — CABEÇALHO, TIMELINE E PAINEL
+   ===================================================================== */
 
 #sobre .about__heading {
   max-width: 820px;
@@ -496,7 +573,6 @@ button:focus-visible {
   line-height: 1.7;
 }
 
-/* ---------- Estrutura ---------- */
 #sobre .about__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -504,7 +580,6 @@ button:focus-visible {
   gap: 40px;
 }
 
-/* ---------- Timeline ---------- */
 #sobre .about__timeline {
   --timeline-number-size: 36px;
   --timeline-gap: 18px;
@@ -522,10 +597,6 @@ button:focus-visible {
   padding-bottom: 28px;
 }
 
-/*
- * Cada item desenha o trecho de linha até o próximo.
- * O último não recebe linha, evitando uma sobra abaixo da lista.
- */
 #sobre .about__timeline-item:not(:last-child)::before {
   content: "";
   position: absolute;
@@ -580,7 +651,6 @@ button:focus-visible {
   line-height: 1.7;
 }
 
-/* ---------- Painel ---------- */
 #sobre .about__panel {
   min-width: 0;
   padding: 28px 24px;
@@ -620,7 +690,6 @@ button:focus-visible {
   line-height: 1.65;
 }
 
-/* Marca visual, sem adicionar texto ao conteúdo da lista */
 #sobre .about__highlights li::before {
   content: "";
   position: absolute;
@@ -639,8 +708,10 @@ button:focus-visible {
   text-align: center;
 }
 
+/* =====================================================================
+   SOBRE MIM
+   ===================================================================== */
 
-/* ---------- Sobre mim ---------- */
 .about-me {
   display: grid;
   grid-template-columns: 1fr;
@@ -673,25 +744,16 @@ button:focus-visible {
   line-height: 1.55;
 }
 
-.btn--outline {
-  margin: 12px 0 20px;
-  padding: 0.5em 1.5em;
-  border: 1px solid var(--teal-700);
-  color: var(--teal-700);
-  background: transparent;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.btn--outline:hover { background: rgb(47 95 92 / 0.06); }
-
 .about-me__panel .btn--primary {
   width: min(100%, 272px);
   padding: 0.9em 1.5em;
   border-radius: 8px;
 }
 
-/* ---------- Depoimentos: carrossel nativo com CSS ---------- */
+/* =====================================================================
+   DEPOIMENTOS
+   ===================================================================== */
+
 #depoimentos .testimonials-carousel {
   --carousel-gap: 16px;
   --card-width: 88%;
@@ -766,7 +828,39 @@ button:focus-visible {
   margin-block-start: 28px;
 }
 
-/* ---------- FAQ ---------- */
+#depoimentos .testimonials-carousel.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+#depoimentos .testimonials__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+#depoimentos .testimonials__cta p {
+  margin: 0;
+  color: var(--teal-700);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+#depoimentos .testimonials__cta .btn {
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* =====================================================================
+   FAQ
+   ===================================================================== */
+
 .faq__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -774,7 +868,9 @@ button:focus-visible {
   gap: 56px;
 }
 
-.faq__copy h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+.faq__copy h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+}
 
 .faq__list {
   display: flex;
@@ -789,9 +885,10 @@ button:focus-visible {
   border-radius: 10px;
 }
 
-.faq-row--open { border-color: var(--orange); }
+.faq-row--open {
+  border-color: var(--orange);
+}
 
-/* h3 wrapper do botão: não herdar Poppins/cor/tamanho dos títulos */
 .faq-row h3 {
   margin: 0;
   font: inherit;
@@ -808,7 +905,6 @@ button:focus-visible {
   border: none;
   color: var(--ink);
   background: none;
-  font: 500 1rem/inherit inherit;
   text-align: start;
   cursor: pointer;
 }
@@ -821,7 +917,9 @@ button:focus-visible {
   transition: rotate 0.2s ease;
 }
 
-.faq-row--open .faq-row__chevron { rotate: 180deg; }
+.faq-row--open .faq-row__chevron {
+  rotate: 180deg;
+}
 
 .faq-row__answer {
   display: none;
@@ -830,27 +928,51 @@ button:focus-visible {
   font-size: 0.92rem;
 }
 
-.faq-row--open .faq-row__answer { display: block; }
+.faq-row--open .faq-row__answer {
+  display: block;
+}
 
-/* ---------- Footer ---------- */
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+
 .footer {
   padding-block-start: 64px;
   color: #e4efed;
   background: var(--teal-700);
 }
 
-.footer__grid {
+.footer .footer__grid {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
+  align-items: start;
   gap: 48px;
   padding-block-end: 40px;
+}
+
+.footer__location {
+  min-width: 0;
+}
+
+.footer .footer__media {
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  border-radius: var(--radius);
+  background: var(--cream);
 }
 
 .footer__media img {
   aspect-ratio: 4 / 3.3;
   border-radius: var(--radius);
   object-fit: cover;
+}
+
+.footer__map {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border: 0;
 }
 
 .footer__title {
@@ -882,13 +1004,21 @@ button:focus-visible {
   color: var(--white);
 }
 
-.footer__address {
+.footer .footer__address {
   display: block;
-  padding-block: 24px 28px;
+  margin: 0;
+  padding: 14px 0 0;
+  border: 0;
   font-style: normal;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
   color: #cfe2df;
-  border-block-start: 1px solid rgb(255 255 255 / 0.15);
+}
+
+.footer__copy .btn--primary {
+  width: min(100%, 320px);
+  margin-top: 8px;
+  border-radius: 8px;
 }
 
 .footer__bottom {
@@ -900,16 +1030,165 @@ button:focus-visible {
   text-align: center;
 }
 
-.footer__bottom small { font-size: inherit; }
-
+.footer__bottom small {
+  font-size: inherit;
+}
 
 /* =====================================================================
-   561px+ (tablet pequeno)
+   FOLHAS E DECORAÇÕES — SEÇÕES CREME
    ===================================================================== */
-@media (min-width: 561px) {
-  .section { padding-block: 88px; }
 
-  .cards-row { grid-template-columns: repeat(2, 1fr); }
+.section.section--tint {
+  --section-leaf: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 340'%3E%3Cg fill='%23dce5e3'%3E%3Cpath d='M20 335C49 254 99 177 211 24' fill='none' stroke='%23dce5e3' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M46 275C11 272-13 250 2 244C17 237 44 251 46 275Z'/%3E%3Cpath d='M48 270C29 233 31 194 44 196C60 200 64 235 48 270Z'/%3E%3Cpath d='M77 223C104 197 151 189 155 204C159 220 111 235 77 223Z'/%3E%3Cpath d='M80 217C52 186 50 144 64 145C81 145 94 184 80 217Z'/%3E%3Cpath d='M114 169C145 142 188 134 193 149C198 165 150 184 114 169Z'/%3E%3Cpath d='M118 163C90 130 88 85 103 85C119 85 132 129 118 163Z'/%3E%3Cpath d='M154 112C182 83 222 72 230 86C238 101 193 123 154 112Z'/%3E%3Cpath d='M157 105C136 75 140 31 154 34C170 37 175 75 157 105Z'/%3E%3Cpath d='M190 56C185 23 211-9 223 0C235 11 214 45 190 56Z'/%3E%3C/g%3E%3C/svg%3E");
+
+  --leaf-width: clamp(190px, 26vw, 340px);
+  --leaf-height: clamp(270px, 37vw, 480px);
+  --leaf-opacity: 0.7;
+
+  --deco-ring: rgba(201, 128, 47, 0.17);
+  --deco-wash: rgba(47, 95, 92, 0.055);
+
+  --ring-position: right 7% top 14%;
+  --dots-position: left 6% bottom 12%;
+  --wash-position: right -80px bottom -100px;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  overflow: clip;
+
+  background-image:
+    radial-gradient(
+      circle closest-side,
+      transparent calc(100% - 2px),
+      var(--deco-ring) calc(100% - 2px),
+      var(--deco-ring) calc(100% - 1px),
+      transparent 100%
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='54' viewBox='0 0 72 54'%3E%3Cdefs%3E%3Cpattern id='dots' width='18' height='18' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='4' cy='4' r='2' fill='%232f5f5c' fill-opacity='.16'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='72' height='54' fill='url(%23dots)'/%3E%3C/svg%3E"),
+    radial-gradient(
+      ellipse closest-side,
+      var(--deco-wash) 0%,
+      var(--deco-wash) 65%,
+      transparent 100%
+    ),
+    var(--section-leaf),
+    var(--section-leaf);
+
+  background-repeat: no-repeat;
+
+  background-size:
+    76px 76px,
+    72px 54px,
+    350px 280px,
+    clamp(120px, 17vw, 220px) auto,
+    clamp(130px, 19vw, 250px) auto;
+
+  background-position:
+    var(--ring-position),
+    var(--dots-position),
+    var(--wash-position),
+    left -75px bottom 12%,
+    right -85px top 10%;
+}
+
+.section.section--tint::before,
+.section.section--tint::after,
+#depoimentos.section--tint::before,
+#depoimentos.section--tint::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: var(--leaf-width);
+  height: var(--leaf-height);
+  background: var(--section-leaf) center / contain no-repeat;
+  opacity: var(--leaf-opacity);
+  pointer-events: none;
+}
+
+.section.section--tint::before,
+#depoimentos.section--tint::before {
+  top: -85px;
+  right: auto;
+  bottom: auto;
+  left: -55px;
+  transform: rotate(8deg);
+}
+
+.section.section--tint::after,
+#depoimentos.section--tint::after {
+  top: auto;
+  right: -45px;
+  bottom: -100px;
+  left: auto;
+  transform: rotate(185deg);
+}
+
+.section.section--tint > .deco {
+  display: none;
+}
+
+/* ---------- Variação de composição ---------- */
+
+.section.section--tint:nth-of-type(3n + 1) {
+  --ring-position: left 9% top 13%;
+  --dots-position: right 5% bottom 15%;
+  --wash-position: left -100px bottom -80px;
+}
+
+.section.section--tint:nth-of-type(3n + 2) {
+  --ring-position: right 6% bottom 10%;
+  --dots-position: left 4% top 17%;
+  --wash-position: right -100px top -90px;
+}
+
+.section.section--tint:nth-of-type(3n) {
+  --ring-position: right 12% top 8%;
+  --dots-position: left 8% bottom 9%;
+  --wash-position: left -90px top -80px;
+  --deco-wash: rgba(201, 128, 47, 0.055);
+}
+
+/* =====================================================================
+   ATÉ 560px — DECORAÇÕES
+   ===================================================================== */
+
+@media (max-width: 560px) {
+  .section.section--tint {
+    --leaf-width: 180px;
+    --leaf-height: 260px;
+    --leaf-opacity: 0.45;
+    --deco-ring: rgba(201, 128, 47, 0.12);
+    --deco-wash: rgba(47, 95, 92, 0.035);
+
+    background-size:
+      44px 44px,
+      54px 40px,
+      220px 190px,
+      130px auto,
+      140px auto;
+
+    background-position:
+      var(--ring-position),
+      var(--dots-position),
+      var(--wash-position),
+      left -85px bottom 18%,
+      right -90px top 20%;
+  }
+}
+
+/* =====================================================================
+   561px+ — TABLET
+   ===================================================================== */
+
+@media (min-width: 561px) {
+  .section {
+    padding-block: 88px;
+  }
+
+  .cards-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   #depoimentos .testimonials-carousel {
     --carousel-gap: 20px;
@@ -918,10 +1197,16 @@ button:focus-visible {
 }
 
 /* =====================================================================
-   1024px+ (desktop)
+   1024px+ — DESKTOP
    ===================================================================== */
+
 @media (min-width: 1024px) {
-  /* Header fixo, transparente sobre o hero; translúcido ao rolar */
+  .section__title {
+    max-width: 50ch;
+  }
+
+  /* ---------- Header ---------- */
+
   .header {
     position: fixed;
     inset-block-start: 0;
@@ -934,7 +1219,6 @@ button:focus-visible {
   .header--scrolled {
     background: rgb(255 255 255 / 0.72);
     border-block-end-color: rgb(31 63 61 / 0.08);
-    box-shadow: 0 6px 24px rgb(31 63 61 / 0.08);
     backdrop-filter: blur(12px) saturate(160%);
   }
 
@@ -949,10 +1233,16 @@ button:focus-visible {
     border: none;
   }
 
-  .nav__toggle { display: none; }
-  .header__cta { display: inline-flex; }
+  .nav__toggle {
+    display: none;
+  }
 
-  /* Hero: imagem na metade direita, com borda ondulada */
+  .header__cta {
+    display: inline-flex;
+  }
+
+  /* ---------- Hero ---------- */
+
   .hero {
     display: flex;
     align-items: center;
@@ -989,7 +1279,16 @@ button:focus-visible {
     transform: scaleX(-1);
   }
 
-  /* Serviços: 5 cards escalonados (sem carrossel) */
+  /* ---------- Cards e serviços ---------- */
+
+  .cards-row {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .cards-row--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   #servicos .cards-row {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -1000,16 +1299,19 @@ button:focus-visible {
     scroll-snap-type: none;
   }
 
-  .service-card { min-height: 300px; }
+  .service-card {
+    min-height: 300px;
+  }
 
   .cards-row:not(.cards-row--3) .service-card:nth-child(even) {
     margin-block-start: 24px;
   }
 
-  .carousel-dots { display: none; }
+  .carousel-dots {
+    display: none;
+  }
 
-  .cards-row { grid-template-columns: repeat(5, 1fr); }
-  .cards-row--3 { grid-template-columns: repeat(3, 1fr); }
+  /* ---------- Sobre ---------- */
 
   #sobre .about__grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
@@ -1025,9 +1327,15 @@ button:focus-visible {
     grid-row: 1;
   }
 
-  .about-me { grid-template-columns: 41fr 59fr; }
+  /* ---------- Sobre mim ---------- */
 
-  .about-me__media img { height: 100%; }
+  .about-me {
+    grid-template-columns: 41fr 59fr;
+  }
+
+  .about-me__media img {
+    height: 100%;
+  }
 
   .about-me__panel {
     margin-block-start: 34px;
@@ -1047,8 +1355,7 @@ button:focus-visible {
     width: min(100%, 300px);
   }
 
-  .faq__grid { grid-template-columns: 0.85fr 1.15fr; }
-  .footer__grid { grid-template-columns: 1fr 1.1fr; }
+  /* ---------- Depoimentos ---------- */
 
   #depoimentos .testimonials-carousel {
     --card-width: clamp(340px, 32vw, 460px);
@@ -1058,17 +1365,12 @@ button:focus-visible {
     width: 100%;
     margin: 48px 0 0;
     padding-block: 36px 44px;
-    padding-inline: var(--carousel-inline-padding);
     scroll-padding-inline: 0;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgb(0 0 0 / 0.35) 10%, #000 30%, #000 70%, rgb(0 0 0 / 0.35) 90%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, rgb(0 0 0 / 0.35) 10%, #000 30%, #000 70%, rgb(0 0 0 / 0.35) 90%, transparent 100%);
   }
 
   #depoimentos .testimonials-carousel > .testimonial-card {
-    flex-basis: var(--card-width);
     padding: 36px 32px;
     border-radius: 20px;
-    box-shadow: 0 16px 36px rgb(31 63 61 / 0.12);
     scroll-snap-align: center;
     transform-origin: center;
   }
@@ -1076,9 +1378,29 @@ button:focus-visible {
   #depoimentos .testimonials-carousel + .container .section__lede {
     margin-block-start: 24px;
   }
+
+  /* ---------- FAQ ---------- */
+
+  .faq__grid {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+
+  /* ---------- Footer ---------- */
+
+  .footer .footer__grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer__map {
+    height: 320px;
+  }
 }
 
-/* ---------- Movimento reduzido ---------- */
+/* =====================================================================
+   MOVIMENTO REDUZIDO
+   ===================================================================== */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1087,47 +1409,7 @@ button:focus-visible {
     animation: none !important;
   }
 
-  html { scroll-behavior: auto; }
-}
-
-/* ---------- Animação de foco dos depoimentos ---------- */
-@supports (animation-timeline: view(inline)) {
-  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
-    #depoimentos .testimonials-carousel > .testimonial-card {
-      animation: testimonial-focus linear both;
-      animation-timeline: view(inline);
-      animation-range: cover 0% cover 100%;
-    }
+  html {
+    scroll-behavior: auto;
   }
-}
-
-@keyframes testimonial-focus {
-  0%,
-  100% {
-    opacity: 0.25;
-    scale: 0.88;
-  }
-
-  25%,
-  75% {
-    opacity: 0.5;
-    scale: 0.93;
-  }
-
-  50% {
-    opacity: 1;
-    scale: 1;
-  }
-}
-
-/* ---------- Mouse: indica que o carrossel pode ser arrastado ---------- */
-@media (hover: hover) and (pointer: fine) {
-  #depoimentos .testimonials-carousel { cursor: grab; }
-}
-
-#depoimentos .testimonials-carousel.is-dragging {
-  cursor: grabbing;
-  user-select: none;
-  scroll-snap-type: none;
-  scroll-behavior: auto;
 }
